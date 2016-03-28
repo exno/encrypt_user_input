@@ -54,7 +54,7 @@ if [[ $encryptuser != "" ]]; then
 encryptpass="$(osascript -e 'Tell application "System Events" to display dialog "Optional:Enter Password Value to encrypt: " with hidden answer default answer ""' -e 'text returned of result' 2>/dev/null)"
 fi
 
-#rncryption section
+#encryption section
 openssluser=$( GenerateEncryptedString "$encryptuser" )
 if [[ $encryptpass != "" ]]; then
 	opensslpass=$( GenerateEncryptedString "$encryptpass" )
